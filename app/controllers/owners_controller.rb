@@ -15,7 +15,7 @@ class OwnersController < ApplicationController
   end
 
   post '/owners' do
-
+    binding.pry
   end
 
   get '/owners/:id/edit' do
