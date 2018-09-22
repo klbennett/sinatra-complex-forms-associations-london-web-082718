@@ -26,7 +26,7 @@ class PetsController < ApplicationController
 
   post '/owners' do
   @owner = Owner.create(params[:owner])
-  if !params["pet"]["name"].empty? #need this line to avoid creating pet with empty name if user leaves box blank
+  if !params["pet"]["name"].empty? #need this condition to avoid creating pet with empty name if user leaves box blank
     @owner.pets << Pet.create(name: params["pet"]["name"])
   end
   redirect "owners/#{@owner.id}"
